@@ -1,24 +1,24 @@
 package aulasJavaPOO.aula03;
 
-// javabeans ()
+//Javabeans ()
 public class Cliente {
 	
-	// atributos
+	//Atributos
 	private String nomeTitular, cpfTitular, rgTitular, enderecoTitular;
 	
-	// construtor vazio
+	//Construtor vazio
 	public Cliente() {
 		
 	}
 	
-	// construtor 
+	//Construtor 
 	public Cliente(String nomeTitular, String cpfTitular, String rgTitular, String enderecoTitular) {
 
 		this.nomeTitular = nomeTitular;
 		this.cpfTitular = cpfTitular;
 		this.rgTitular = rgTitular;
 		this.enderecoTitular = enderecoTitular;
-		System.out.println("Objeto cliente criado");
+		System.out.println("Cliente criado.");
 	}
 	
 	

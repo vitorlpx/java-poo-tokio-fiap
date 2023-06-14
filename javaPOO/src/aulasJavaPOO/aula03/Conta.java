@@ -11,6 +11,7 @@ public abstract class Conta {
 	protected Date dataAbertura;
 	protected double saldo;
 	protected Cliente cliente; //Composição
+	private static long contador; //Variável da classe, e não do objeto.
 
 	//Construtor
 	public Conta(Cliente cliente, int numeroConta, int agencia, String senhaConta) {
@@ -19,8 +20,9 @@ public abstract class Conta {
 		this.agencia = agencia;
 		this.senhaConta = senhaConta;
 		this.dataAbertura = new Date(System.currentTimeMillis());
+		contador++;
 
-		System.out.println("Objeto conta criado");
+		System.out.println("Objeto conta criado com sucesso.");
 		System.out.println("Data de abertura da conta: " + this.dataAbertura);
 	}
 
@@ -49,8 +51,10 @@ public abstract class Conta {
 	}
 
 	//Consultar saldo
-	public void exibirSaldo() {
-		System.out.println(this.cliente.getNomeTitular() + "Saldo: " + this.saldo);
-	}
+	public abstract void exibirSaldo();
 
+	public static void contador() {
+		System.out.println("Total de contas criadas: " + contador);
+	}
+	
 }
