@@ -10,8 +10,8 @@ public abstract class Conta {
 	protected String senhaConta;
 	protected Date dataAbertura;
 	protected double saldo;
-	protected Cliente cliente; //Composição
-	private static long contador; //Variável da classe, e não do objeto.
+	protected Cliente cliente; //Composição - guardando um objeto dentro do outro.
+	private static long contador; //Quando usamos static ele cria uma variável somente da classe, e não do objeto.
 
 	//Construtor
 	public Conta(Cliente cliente, int numeroConta, int agencia, String senhaConta) {
@@ -44,13 +44,15 @@ public abstract class Conta {
 
 	//Transferir
 	public void transferir(Conta conta, double valor) {
-		boolean teste = this.sacar(valor);
+		boolean teste = this.sacar(valor);  //executa o metodo com o valor fornecido
 		if (teste == true) {
 			conta.depositar(valor);
 		}
 	}
 
 	//Consultar saldo
+	
+	//Abstact faz com que ele força reescrever na classse filha.
 	public abstract void exibirSaldo();
 
 	public static void contador() {

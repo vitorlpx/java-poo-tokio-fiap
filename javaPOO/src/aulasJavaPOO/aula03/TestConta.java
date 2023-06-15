@@ -1,12 +1,15 @@
 package aulasJavaPOO.aula03;
 
+import java.text.ParseException;
+
 public class TestConta {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		
 		//Objetos
-		Cliente vitinho = new Cliente("Vitinho ", "123456789", "123456788", "Rua x, 145");
-		Cliente camotinha = new Cliente("Camotinha ", "987654321", "987654321", "Rua y, 256");
+		Cliente vitinho = new Cliente("Vitinho ", "123456789", "123456788", "Rua x, 145", "15/03/2006");
+		//Criamos uma variável para esse objeto para conseguirmos buscar na memória. 
+		Cliente camotinha = new Cliente("Camotinha ", "987654321", "987654321", "Rua y, 256", "12/07/2005");
 		
 		ContaCorrente contaVitinho = new ContaCorrente(vitinho, 1, 1, "teste");
 		ContaCorrente contaCamotinha = new ContaCorrente(camotinha, 2, 1, "teste");
@@ -37,6 +40,9 @@ public class TestConta {
 
 		contaVitinho.exibirSaldo();
 		contaCamotinha.exibirSaldo();
+		
+		//Para pegarmos um atributo privado e exibi-lo, temos que usar o get.
+		System.out.println(camotinha.getNomeTitular());
 		
 		Conta.contador();
 
