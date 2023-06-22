@@ -21,11 +21,11 @@ public class ContaCorrente extends Conta {
 	}
 	
 	//Design pattern Strategy
-	public void investimento(double valor, Produto produto) {
+	public void investimento(double valor, Produto produto) throws SaldoInsuficiente {
 		boolean teste = this.sacar(valor);
 		if (teste == true) {
 			this.saldoInvestimento += produto.investir(valor);
-		}
+		} else throw new SaldoInsuficiente("Saldo insuficiente para investir.");
 		
 
 	}

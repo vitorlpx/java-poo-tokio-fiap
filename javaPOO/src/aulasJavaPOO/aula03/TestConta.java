@@ -4,7 +4,7 @@ import java.text.ParseException;
 
 public class TestConta {
 
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) throws ParseException, SaldoInsuficiente {
 		
 		//Objetos
 		Cliente vitinho = new Cliente("Vitinho ", "123456789", "123456788", "Rua x, 145", "15/03/2006");
@@ -20,7 +20,7 @@ public class TestConta {
 		
 		
 		//Simulações
-		contaVitinho.depositar(7000);
+		contaVitinho.depositar(100);
 		contaCamotinha.depositar(7000);
 		
 		contaVitinho.exibirSaldo();
