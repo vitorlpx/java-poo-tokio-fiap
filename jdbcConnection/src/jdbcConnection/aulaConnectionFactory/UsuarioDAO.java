@@ -56,7 +56,16 @@ public class UsuarioDAO {
 	
 	//delete
 	public void delete(long id) {
+/*		String sql = "delete from usuario where id = 1";
 		
-	}
+		try {
+			PreparedStatement stmt = conexao.prepareStatement(sql);
+			stmt.getDe
+			
+		} catch (SQLException e) {
+			// TODO: handle exception
+		}
+		*/
+	} 
 	
 }

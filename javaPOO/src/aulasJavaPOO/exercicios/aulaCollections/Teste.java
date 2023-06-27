@@ -37,9 +37,14 @@ public class Teste {
 			System.out.println("ID: " + usuario.getIdUsuario() + " -- Nome: " +usuario.getNome());
 		}
 		
-//		Map mapa = new HashMap();
-//		mapa.put("Joao", joao);
+		// --------------------- Map ------------------------ //
 		
+		Map mapa = new HashMap();
+		mapa.put("Joao", joao);
+		
+		Object objeto = mapa.get("Jose");
+		Usuario usuario = (Usuario) objeto;
+		System.out.println(usuario.getNome());
 		
 	}
 
